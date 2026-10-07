@@ -1,3 +1,5 @@
+import random
+
 #Tarot Card Draw Project. I have to build a terminal program that welcomes user, asks what they want their reading on.
 #and what kind of three card reading they want
 print("***********************")
@@ -12,4 +14,36 @@ tarot_deck = ["1 The Fool", "2 The Magician", "3 Empress", " 4 Emperor", "5 Hier
 "Ace of Swords", "One of Swords", "Two of Swords", "Three of Swords", "Four of Swords", "Five of Swords", "Six of Swords", "Seven of Swords", "Eight of Swords", "Nine of Swords", "Ten of Swords", "Page of Swords", "Knight of Swords", "Queen of Swords", "King of Swords"]
 
 def pick_tarot_card():
+    random_card1 = random.choice(tarot_deck)
+    random_card2 = random.choice(tarot_deck)
+    random_card3 = random.choice(tarot_deck)
+    if random_card2 == random_card1:
+        random_card2 = random.choice(tarot_deck)
+    if random_card3 == random_card2:
+        random_card3 = random.choice(tarot_deck)
+    if random_card3 == random_card1:
+        random_card3 == random.choice(tarot_deck)
+    return random_card1, random_card2, random_card3
+#Get user input for name, what they want a reading on and what kind of three card drawing they want
+user_name = input("Thank you for entering the shop today, the cards told me you were coming but they didn't tell me your name. What should I call you? (Type your name then hit enter) ")
+
+reading_for = input("Hello " + user_name + " welcome in. What would you like a reading on today? (Relationship, Career, or Personal Growth) ")
+
+#Logic for user selection
+if reading_for == "Relationship":
+    reading_type = input("So " + user_name + " would you like your " + reading_for + " reading spread to be Past/Present/Future or Situation/Obstacle/Advice? ")
+elif reading_for == "Career":
+    reading_type = input("So " + user_name + " would you like your " + reading_for + " reading spread to be Past/Present/Future or Situation/Obstacle/Advice? ")
+elif reading_for == "Personal Growth":
+    reading_type = input("So " + user_name + " would you like your " + reading_for + " reading spread to be Past/Present/Future or Situation/Obstacle/Advice? ")
+else:
+    reading_for = input("Sorry that's not one of the offered options. Please type Relationship, Career, or Personal Growth ")
+
+if reading_type == "Past/Present/Future":
     pass
+elif reading_type == "Situation/Obstacle/Advice":
+    pass
+else:
+    reading_type = input("Sorry that's not one of the offered options please type: Past/Present/Future or Situation/Obstacle/Advice")
+
+print(pick_tarot_card())
