@@ -1,0 +1,1 @@
+Portfolio Project for CS 101. Goal is to research and build a basic terminal program of my choice. This is to show proficiency in basic Python, Git version control, and Command Line and File navigation.
