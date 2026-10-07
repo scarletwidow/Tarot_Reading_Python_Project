@@ -24,6 +24,7 @@ def pick_tarot_card():
     if random_card3 == random_card1:
         random_card3 == random.choice(tarot_deck)
     return random_card1, random_card2, random_card3
+
 #Get user input for name, what they want a reading on and what kind of three card drawing they want
 user_name = input("Thank you for entering the shop today, the cards told me you were coming but they didn't tell me your name. What should I call you? (Type your name then hit enter) ")
 
