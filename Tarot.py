@@ -14,9 +14,11 @@ tarot_deck = ["1 The Fool", "2 The Magician", "3 Empress", " 4 Emperor", "5 Hier
 "Ace of Swords", "One of Swords", "Two of Swords", "Three of Swords", "Four of Swords", "Five of Swords", "Six of Swords", "Seven of Swords", "Eight of Swords", "Nine of Swords", "Ten of Swords", "Page of Swords", "Knight of Swords", "Queen of Swords", "King of Swords"]
 
 def pick_tarot_card():
+    #use random.choice method from imported random module to set the variables to three random cards from the tarot_deck list
     random_card1 = random.choice(tarot_deck)
     random_card2 = random.choice(tarot_deck)
     random_card3 = random.choice(tarot_deck)
+    #logic to ensure that the same "card" isn't pulled from the tarot_desk list 
     if random_card2 == random_card1:
         random_card2 = random.choice(tarot_deck)
     if random_card3 == random_card2:
@@ -41,10 +43,10 @@ else:
     reading_for = input("Sorry that's not one of the offered options. Please type Relationship, Career, or Personal Growth ")
 
 if reading_type == "Past/Present/Future":
-    pass
+    print("Your cards for the Past, Present, and Future are: ", pick_tarot_card())
 elif reading_type == "Situation/Obstacle/Advice":
-    pass
+    print("Your cards for the Situation, Obstacle, and Advice are: ", pick_tarot_card())
 else:
     reading_type = input("Sorry that's not one of the offered options please type: Past/Present/Future or Situation/Obstacle/Advice")
 
-print(pick_tarot_card())
+#print(pick_tarot_card())
