@@ -18,6 +18,7 @@ def pick_tarot_card():
     random_card1 = random.choice(tarot_deck)
     random_card2 = random.choice(tarot_deck)
     random_card3 = random.choice(tarot_deck)
+
     #logic to ensure that the same "card" isn't pulled from the tarot_desk list 
     if random_card2 == random_card1:
         random_card2 = random.choice(tarot_deck)
@@ -25,14 +26,16 @@ def pick_tarot_card():
         random_card3 = random.choice(tarot_deck)
     if random_card3 == random_card1:
         random_card3 == random.choice(tarot_deck)
+
+    #return three random "card" from tarot_desk list
     return random_card1, random_card2, random_card3
 
-#Get user input for name, what they want a reading on and what kind of three card drawing they want
+#Get user input for name
 user_name = input("Thank you for entering the shop today, the cards told me you were coming but they didn't tell me your name. What should I call you? (Type your name then hit enter) ")
-
+#Get user input for what they want a reading on
 reading_for = input("Hello " + user_name + " welcome in. What would you like a reading on today? (Relationship, Career, or Personal Growth) ")
 
-#Logic for user selection
+#Logic for what kind of three card drawing they want based on which type of reading they picked
 if reading_for == "Relationship":
     reading_type = input("So " + user_name + " would you like your " + reading_for + " reading spread to be Past/Present/Future or Situation/Obstacle/Advice? ")
 elif reading_for == "Career":
@@ -42,10 +45,11 @@ elif reading_for == "Personal Growth":
 else:
     reading_for = input("Sorry that's not one of the offered options. Please type Relationship, Career, or Personal Growth ")
 
+#Depending on what kind of drawing user picked give them a personalized answer
 if reading_type == "Past/Present/Future":
-    print("Your cards for the Past, Present, and Future are: ", pick_tarot_card())
+    print(user_name + ", your cards for the Past, Present, and Future are: ", pick_tarot_card())
 elif reading_type == "Situation/Obstacle/Advice":
-    print("Your cards for the Situation, Obstacle, and Advice are: ", pick_tarot_card())
+    print(user_name + ", your cards for the Situation, Obstacle, and Advice are: ", pick_tarot_card())
 else:
     reading_type = input("Sorry that's not one of the offered options please type: Past/Present/Future or Situation/Obstacle/Advice")
 
